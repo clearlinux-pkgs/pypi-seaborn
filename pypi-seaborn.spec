@@ -4,7 +4,7 @@
 #
 Name     : pypi-seaborn
 Version  : 0.11.2
-Release  : 41
+Release  : 42
 URL      : https://files.pythonhosted.org/packages/58/81/51b7ee560a1b01d5c47cae22bfed4e79f1529a08cdff950506097b0d51e1/seaborn-0.11.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/81/51b7ee560a1b01d5c47cae22bfed4e79f1529a08cdff950506097b0d51e1/seaborn-0.11.2.tar.gz
 Summary  : seaborn: statistical data visualization
@@ -14,9 +14,6 @@ Requires: pypi-seaborn-license = %{version}-%{release}
 Requires: pypi-seaborn-python = %{version}-%{release}
 Requires: pypi-seaborn-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: seaborn
-Provides: seaborn-python
-Provides: seaborn-python3
 BuildRequires : pypi(matplotlib)
 BuildRequires : pypi(numpy)
 BuildRequires : pypi(pandas)
@@ -66,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641496241
+export SOURCE_DATE_EPOCH=1650929464
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
