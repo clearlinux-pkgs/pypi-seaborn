@@ -4,7 +4,7 @@
 #
 Name     : pypi-seaborn
 Version  : 0.11.2
-Release  : 43
+Release  : 44
 URL      : https://files.pythonhosted.org/packages/58/81/51b7ee560a1b01d5c47cae22bfed4e79f1529a08cdff950506097b0d51e1/seaborn-0.11.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/58/81/51b7ee560a1b01d5c47cae22bfed4e79f1529a08cdff950506097b0d51e1/seaborn-0.11.2.tar.gz
 Summary  : seaborn: statistical data visualization
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656374366
+export SOURCE_DATE_EPOCH=1656406557
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
