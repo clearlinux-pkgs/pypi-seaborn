@@ -4,7 +4,7 @@
 #
 Name     : pypi-seaborn
 Version  : 0.12.1
-Release  : 50
+Release  : 51
 URL      : https://files.pythonhosted.org/packages/cf/c6/e605f937d0301c1d00a159d55c96ae9edc1adf2fabec6dbc5e43333e5943/seaborn-0.12.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/c6/e605f937d0301c1d00a159d55c96ae9edc1adf2fabec6dbc5e43333e5943/seaborn-0.12.1.tar.gz
 Summary  : Statistical data visualization
