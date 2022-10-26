@@ -4,7 +4,7 @@
 #
 Name     : pypi-seaborn
 Version  : 0.12.1
-Release  : 51
+Release  : 52
 URL      : https://files.pythonhosted.org/packages/cf/c6/e605f937d0301c1d00a159d55c96ae9edc1adf2fabec6dbc5e43333e5943/seaborn-0.12.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cf/c6/e605f937d0301c1d00a159d55c96ae9edc1adf2fabec6dbc5e43333e5943/seaborn-0.12.1.tar.gz
 Summary  : Statistical data visualization
@@ -61,20 +61,22 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666136526
+export SOURCE_DATE_EPOCH=1666793001
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
 export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . matplotlib
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx"
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx "
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+pypi-dep-fix.py . matplotlib
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 popd
@@ -90,6 +92,7 @@ cp %{_builddir}/seaborn-%{version}/licences/NUMPYDOC_LICENSE %{buildroot}/usr/sh
 cp %{_builddir}/seaborn-%{version}/licences/PACKAGING_LICENSE %{buildroot}/usr/share/package-licenses/pypi-seaborn/fdc0e4eabc45522b079deff7d03d70528d775dc0 || :
 cp %{_builddir}/seaborn-%{version}/licences/SCIPY_LICENSE %{buildroot}/usr/share/package-licenses/pypi-seaborn/224344942fe3a15ac074df8f635f3e7b445f5b2e || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
+pypi-dep-fix.py %{buildroot} matplotlib
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
